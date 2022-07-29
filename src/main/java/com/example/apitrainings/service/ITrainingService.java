@@ -1,8 +1,11 @@
 package com.example.apitrainings.service;
 
+import com.example.apitrainings.Entities.Order;
+import com.example.apitrainings.Entities.OrderItem;
 import com.example.apitrainings.Entities.Training;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
@@ -20,4 +23,12 @@ public interface ITrainingService {
     List<Training> readTrainingsByCategoryId(Long catId);
 
     List<Training> readTrainingsByCategoryName (String name);
+
+    Order saveOrder(Order o);
+
+    OrderItem saveOrderItem(OrderItem oi);
+
+    List<Order> getOrders();
+
+    List<OrderItem> getOrderItems();
 }

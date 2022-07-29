@@ -7,7 +7,7 @@ import com.example.apitrainings.dao.TrainingRepository;
 import com.example.apitrainings.service.ICategoryService;
 import com.example.apitrainings.service.ITrainingService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
+//import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -37,6 +37,8 @@ private CategoryRepository categoryRepository;
 
     @Override
     public void run(String... args) throws Exception {
+
+        //System.out.println(trainingService.readTraining((long)7));
 
 //        Category info=new Category(null, "Formations informatiques");
 //        Category other=new Category(null, "Autres formations");

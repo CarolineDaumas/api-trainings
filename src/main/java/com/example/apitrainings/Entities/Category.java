@@ -1,16 +1,18 @@
 package com.example.apitrainings.Entities;
 
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Collection;
 
 @Entity
-@Data @NoArgsConstructor
+@Data @NoArgsConstructor @ToString
 public class Category implements Serializable {
     private static final long serialVersionUID = 1L;
 
@@ -19,7 +21,8 @@ public class Category implements Serializable {
 
     private String name;
 
-    @OneToMany (mappedBy = "category") @JsonIgnore
+    @OneToMany(fetch = FetchType.EAGER)  @JsonIgnore
+    @JoinColumn(name = "category_id")
     private Collection<Training> trainings;
 
     public Category(Long id, String name) {
